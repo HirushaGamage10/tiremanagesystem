@@ -27,3 +27,23 @@ window.addEventListener('click', function (e) {
         });
     }
 });
+
+function toggleForm() {
+    document.getElementById("tireForm").classList.toggle("hidden");
+}
+
+const searchInput = document.getElementById("searchInput");
+        const tableBody = document.getElementById("tableBody");
+
+        searchInput.addEventListener("input", function () {
+            const filter = searchInput.value.toLowerCase();
+            const rows = tableBody.getElementsByTagName("tr");
+
+            for (let row of rows) {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(filter) ? "" : "none";
+            }
+        });
+
+// Toggle Tire Form
+    

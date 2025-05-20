@@ -75,82 +75,96 @@
                 <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
             </div>
             <!-- Reusable row structure -->
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Vehicle Number</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-              <label class="w-1/3 text-sm font-medium">Vehicle Type</label>
-              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-          </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Vehicle Brand</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-              <label class="w-1/3 text-sm font-medium">Vehicle Model</label>
-              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">User Section</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-              <label class="w-1/3 text-sm font-medium">Last Tire Replacement Date</label>
-              <input type="date" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-             </div>
-    
-             <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Make of Existing Tire</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-        
-            <div class="flex items-center space-x-4">
-                 <label class="w-1/3 text-sm font-medium">Tire Size Required</label>
-                 <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-             </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Tire Brand Required</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Vehicle Number</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
             </div>
 
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Tire Brand Required</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Vehicle Type</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
             </div>
 
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">No. of Tires Required</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">No. of Tubes Required</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Cost Centre</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Present km Reading</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
-            </div>
-    
-            <div class="flex items-center space-x-4">
-                <label class="w-1/3 text-sm font-medium">Km reading at previous tire replacement</label>
-                <input type="text" class="flex-1 px-4 py-2 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Vehicle Brand</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
             </div>
 
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Vehicle Model</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">User Section</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Delivery place - Name of the office</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Delivery place - Street name</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Delivery place - Town</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Last Tire Replacement Date</label>
+              <input type="date" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Make of Existing Tire</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Tire Size Required</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Tire Brand Required</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Total Price</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Warranty Distance</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">No. of Tires Required</label>
+              <input type="number" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">No. of Tubes Required</label>
+              <input type="number" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Cost Centre</label>
+              <input type="text" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Present km Reading</label>
+              <input type="number" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+              <label class="mb-1 text-sm font-medium sm:w-1/3 sm:mb-0">Km at previous tire replacement</label>
+              <input type="number" class="flex-1 px-4 py-2 bg-gray-200 rounded-full focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            
              <div class="flex items-center space-x-4">
                 <label class="w-1/3 text-sm font-medium">Tire Wire indicator appeared</label>
                 <div class="flex flex-1 px-4 py-2 space-x-6 bg-gray-200 border rounded-full focus:outline-none focus:ring focus:border-blue-300">
