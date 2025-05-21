@@ -154,63 +154,17 @@
                 <textarea class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200" rows="3"></textarea>
             </div>
 
-            <!-- Radio: Warranty State -->
-             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <label class="sm:w-1/3 text-sm font-medium mb-1 sm:mb-0">Warranty State</label>
-              <div class="flex space-x-6 bg-gray-200 px-4 py-2 rounded-full flex-1 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200">
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="yes" class="mr-2" /> Yes</label>
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="no" class="mr-2" /> No</label>
-              </div>
-            </div>
+           
 
-            
-
-            <!-- Radio: Incorrect Alignment -->
-             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <label class="sm:w-1/3 text-sm font-medium mb-1 sm:mb-0">Incorrect aignment</label>
-              <div class="flex space-x-6 bg-gray-200 px-4 py-2 rounded-full flex-1 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200">
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="yes" class="mr-2" /> Yes</label>
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="no" class="mr-2" /> No</label>
-              </div>
-            </div>
-
-            <!-- Radio: Detective Steering System -->
-             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <label class="sm:w-1/3 text-sm font-medium mb-1 sm:mb-0">Detective Steering System</label>
-              <div class="flex space-x-6 bg-gray-200 px-4 py-2 rounded-full flex-1 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200">
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="yes" class="mr-2" /> Yes</label>
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="no" class="mr-2" /> No</label>
-              </div>
-            </div>
-
-            
-            <!-- Radio: Detective Suspension -->
-             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <label class="sm:w-1/3 text-sm font-medium mb-1 sm:mb-0">Detective Suspension</label>
-              <div class="flex space-x-6 bg-gray-200 px-4 py-2 rounded-full flex-1 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200">
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="yes" class="mr-2" /> Yes</label>
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="no" class="mr-2" /> No</label>
-              </div>
-            </div>
-
-            <!-- Radio: Purchase Tires -->
-             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <label class="sm:w-1/3 text-sm font-medium mb-1 sm:mb-0">Purchase Tires</label>
-              <div class="flex space-x-6 bg-gray-200 px-4 py-2 rounded-full flex-1 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200">
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="yes" class="mr-2" /> Yes</label>
-                <label class="flex items-center text-sm"><input type="radio" name="wire_indicator" value="no" class="mr-2" /> No</label>
-              </div>
-            </div>
-
-            <!-- Transport Officer Comments -->
+            <!-- Section Officer Comments -->
             <div class="flex flex-col md:flex-row md:items-start md:space-x-4 space-y-2 md:space-y-0">
-                <label class="md:w-1/3 font-medium text-sm mt-1">Transport Officer Comments</label>
+                <label class="md:w-1/3 font-medium text-sm mt-1">Section Officer Comments</label>
                 <textarea class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200" rows="3"></textarea>
             </div>
 
             <!-- Approve Service No -->
             <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
-                <label class="md:w-1/3 font-medium text-sm">Approve Transport Officer Service No</label>
+                <label class="md:w-1/3 font-medium text-sm">Approve Section Officer Service No</label>
                 <input type="text" class="flex-1 border rounded-full px-4 py-2 focus:outline-none focus:ring focus:border-blue-300 bg-gray-200" />
             </div>
 
