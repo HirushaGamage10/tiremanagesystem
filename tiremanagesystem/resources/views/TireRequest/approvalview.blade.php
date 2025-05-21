@@ -1,44 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Tire Requests</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400&display=swap" rel="stylesheet">
-</head>
+<x-app-layout>
+
 <body class="bg-gray-100 h-screen flex flex-col overflow-hidden">
 
   <!-- Header -->
-  <header class="flex justify-between items-center p-2 bg-[#0F1E36] shadow-md z-10">
-    <div class="flex items-center space-x-3">
-      <a href="index.html">
-        <img src="assets/images/logo2.png" class="h-[60px] sm:h-[80px]" alt="SLTMobitel Logo">
-      </a>
-    </div>
-    <div class="relative">
-      <div onclick="toggleDropdown('profileMenu')" class="cursor-pointer flex items-center space-x-2">
-        <span class="text-white text-sm sm:text-base font-medium">Mr. Sadun Kumara</span>
-        <img src="https://i.pravatar.cc/40?img=3" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white" alt="Profile Picture">
-      </div>
-      <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white text-black rounded-xl shadow-lg z-20">
-        <a href="profile.html" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
-        <a href="login.html" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
-      </div>
-    </div>
-  </header>
+  @include('layouts.header')
+   
 
   <!-- Main Wrapper -->
   <div class="flex flex-1 overflow-hidden flex-col sm:flex-row">
 
     <!-- Sidebar -->
-    <aside class="w-full sm:w-64 p-4 bg-white relative shadow z-10">
-      <div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm" style="background-image: url('assets/images/background3.png');"></div>
-      <div class="relative z-10 mt-4 sm:mt-8 flex flex-col sm:items-center space-y-4 sm:space-y-6">
-        <a href="NewTireRequest.html" class="block w-full text-center bg-green-600 text-white py-2 rounded-[10px] hover:bg-green-700 text-sm sm:text-base">Approval</a>
-        <a href="approvalRequest.html" class="block w-full text-center bg-blue-700 text-white py-2 rounded-[10px] hover:bg-blue-800 text-sm sm:text-base">Approval Requests</a>
-      </div>
-    </aside>
+    @include('layouts.side3')
 
     <!-- Main Content -->
     <main class="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#999999]">
@@ -271,24 +243,10 @@
     </main>
   </div>
 
-  <!-- Dropdown Toggle Script -->
-  <script>
-    function toggleDropdown(id) {
-      document.querySelectorAll('[id$="Dropdown"], #profileMenu').forEach(dropdown => {
-        if (dropdown.id !== id) dropdown.classList.add('hidden');
-      });
-      const element = document.getElementById(id);
-      element.classList.toggle('hidden');
-    }
-
-    window.addEventListener('click', function (e) {
-      if (!e.target.closest('[onclick]') && !e.target.closest('#profileMenu')) {
-        document.querySelectorAll('[id$="Dropdown"], #profileMenu').forEach(dropdown => {
-          dropdown.classList.add('hidden');
-        });
-      }
-    });
-  </script>
+    <!-- Custom JavaScript -->
+  <script src="{{ asset('assets/js/script.js') }}"></script>
+ 
 
 </body>
-</html>
+
+</x-app-layout>
