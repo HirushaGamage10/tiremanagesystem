@@ -1,7 +1,7 @@
 <!-- Header -->
   <header class="flex justify-between items-center p-2 bg-[#0F1E36] shadow-md z-10">
     <div class="flex items-center space-x-3">
-      <a href="index.html">
+      <a href="">
         <img src="assets/images/logo2.png" class="h-[60px] sm:h-[80px]" alt="SLTMobitel Logo">
       </a>
     </div>

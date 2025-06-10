@@ -7,5 +7,8 @@
         <a href="" class="block w-full text-center bg-blue-700 text-white py-2 rounded-[10px] hover:bg-blue-800 text-sm sm:text-base">
             Vehicle Details
         </a>
+        <a href="" class="block w-full text-center bg-purple-600 text-white py-2 rounded-[10px] hover:bg-purple-800 text-sm sm:text-base">
+            Supplier Details
+        </a>
     </div>
 </aside>

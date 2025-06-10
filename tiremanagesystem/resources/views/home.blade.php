@@ -21,13 +21,13 @@
 
         <!-- Master Data -->
         <div class="relative w-full">
-          <button onclick="toggleDropdown('masterDropdown')"
+          <a onclick="toggleDropdown('masterDropdown')"
             class="w-full h-14 rounded-[10px] font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform text-base font-serif btn-gradient">
             <img src="https://img.icons8.com/ios/50/request-service.png" class="w-auto h-6" />
             Master Data
-          </button>
+        </a>
           <div id="masterDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
-            <a href="NewTireRequest.html" class="block px-4 py-2 hover:bg-gray-100">Tire Data</a>
+            <a href="{{ route('masterdata.tire') }}" class="block px-4 py-2 hover:bg-gray-100">Tire Data</a>
           </div>
         </div>
 
