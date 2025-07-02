@@ -139,8 +139,17 @@ class TransportController extends Controller
         return redirect()->route('transport.viewtransport')->with('success', 'Transport approval updated!');
     }
 
+    // After approval list page
+    public function afterApproval()
+    {
+        $requests = \App\Models\TireRequest::with(['vehicle', 'user'])
+            ->where('section_approval_status', 'approved')
+            ->where('mechanic_approval_status', 'approved')
+            ->whereIn('transport_approval_status', ['approved', 'rejected'])
+            ->orderByDesc('created_at')
+            ->get();
 
-
-
+        return view('Transport.afterapproval', compact('requests'));
+    }
 
 }

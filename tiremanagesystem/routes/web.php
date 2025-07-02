@@ -86,6 +86,7 @@ Route::middleware(['transport_officer'])->group(function () {
     Route::get('/transport/viewtransport', [TransportController::class, 'viewTransport'])->name('transport.viewtransport');
     Route::get('/transport/approval/{id}', [TransportController::class, 'transportApprovalView'])->name('transport.transportapprovalview');
     Route::post('/transport/approval/{id}', [TransportController::class, 'transportApprovalSubmit'])->name('transport.transportapprovalsubmit');
+    Route::get('/transport/after-approval', [TransportController::class, 'afterApproval'])->name('transport.afterapproval');
 });
 
 
