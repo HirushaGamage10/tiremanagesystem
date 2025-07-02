@@ -1,4 +1,4 @@
-<!-- filepath: resources/views/Transport/viewevaluation.blade.php -->
+<!-- filepath: resources/views/Transport/viewtransport.blade.php -->
 <x-app-layout>
 
 <body class="bg-gray-100 h-screen flex flex-col overflow-hidden">
@@ -11,6 +11,7 @@
 
     <!-- Sidebar -->
     @include('layouts.side5')
+
     <!-- Main Content -->
     <div class="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#999999]">
       <div class="bg-white rounded-[30px] shadow p-4 sm:p-6">
@@ -41,36 +42,41 @@
           <table id="mechanicTable" class="min-w-full border border-gray-200">
             <thead>
               <tr class="bg-blue-800 text-white text-left">
-                
+                <th class="px-4 py-2 border">Request Code</th>
                 <th class="px-4 py-2 border">Vehicle No</th>
                 <th class="px-4 py-2 border">Driver</th>
                 <th class="px-4 py-2 border">Tire Size</th>
                 <th class="px-4 py-2 border">Tire Brand</th>
-                <th class="px-4 py-2 border">Mechanic Approval Status</th>
+                <th class="px-4 py-2 border">Transport Approval Status</th>
                 <th class="px-4 py-2 border">Date</th>
                 <th class="px-4 py-2 border">Action</th>
               </tr>
             </thead>
             <tbody id="tableBody">
-              @forelse($requests->whereNull('mechanical_approval_status')->merge(
-                  $requests->where('mechanical_approval_status', 'pending')
-                ) as $req)
+              @forelse($requests as $req)
                 <tr class="text-gray-700">
+                  <td class="px-4 py-2 border">{{ $req->request_code ?? '-' }}</td>
                   <td class="px-4 py-2 border">{{ $req->vehicle->vehicle_number ?? '-' }}</td>
                   <td class="px-4 py-2 border">{{ $req->user->full_name ?? '-' }}</td>
                   <td class="px-4 py-2 border">{{ $req->tire_size_required }}</td>
                   <td class="px-4 py-2 border">{{ $req->tire_brand_required }}</td>
                   <td class="px-4 py-2 border">
-                    <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-sm">Pending</span>
+                    @if($req->transport_approval_status === 'approved')
+                      <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-sm">Approved</span>
+                    @elseif($req->transport_approval_status === 'rejected')
+                      <span class="bg-red-200 text-red-800 px-2 py-1 rounded text-sm">Rejected</span>
+                    @else
+                      <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-sm">Pending</span>
+                    @endif
                   </td>
                   <td class="px-4 py-2 border">{{ $req->created_at ? $req->created_at->format('Y-m-d') : '-' }}</td>
                   <td class="px-4 py-2 border">
-                    <a href="{{ route('transport.evaluationview', $req->id) }}" class="bg-green-800 text-sky-50 px-2 py-1 rounded text-sm inline-block">View</a>
+                    <a href="{{ route('transport.transportapprovalview', $req->id) }}" class="bg-blue-700 text-white px-2 py-1 rounded text-sm inline-block">View</a>
                   </td>
                 </tr>
               @empty
                 <tr>
-                  <td colspan="8" class="text-center py-4">No mechanic approval pending requests found.</td>
+                  <td colspan="8" class="text-center py-4">No transport approval pending requests found.</td>
                 </tr>
               @endforelse
             </tbody>
@@ -81,7 +87,7 @@
     </div>
   </div>
 
- 
+  
   <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 </x-app-layout>

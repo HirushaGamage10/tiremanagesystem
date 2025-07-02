@@ -73,7 +73,7 @@
                                     <!-- Mechanical Approval Status -->
                                     <td class="px-4 py-2 border">
                                         @php
-                                            $status = $req->mechanical_approval_status ?? 'pending';
+                                            $status = $req->mechanic_approval_status ?? 'pending';
                                         @endphp
                                         @if($status == 'approved')
                                             <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-sm">Approved</span>

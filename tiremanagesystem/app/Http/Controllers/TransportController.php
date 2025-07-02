@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TireRequest;
+use App\Models\TransportApproval;
 use App\Models\MechanicalApprovalCheck;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,6 +89,8 @@ class TransportController extends Controller
 
 
     //Approval part
+    
+    // Show transport requests that need approval
     public function viewTransport()
     {
         $requests = \App\Models\TireRequest::with(['vehicle', 'user'])
@@ -98,6 +101,42 @@ class TransportController extends Controller
             ->get();
 
         return view('Transport.viewtransport', compact('requests'));
+    }
+
+    // Show approval form
+    public function transportApprovalView($id)
+    {
+        $request = \App\Models\TireRequest::with(['vehicle', 'user'])->findOrFail($id);
+        return view('Transport.approvaltransport', compact('request'));
+    }
+
+    // Handle approval/reject
+    public function transportApprovalSubmit(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|in:approved,rejected',
+            'transport_comments' => 'nullable|string',
+            'transport_officer_number' => 'nullable|string',
+        ]);
+
+        // Save to transport_approvals table
+        TransportApproval::updateOrCreate(
+            ['request_id' => $id],
+            [
+                'user_id' => Auth::id(),
+                'status' => $request->status,
+                'transport_comments' => $request->transport_comments,
+                'transport_officer_number' => $request->transport_officer_number,
+                'updated_at' => now(),
+            ]
+        );
+
+        // Update tire_requests table
+        $tireRequest = \App\Models\TireRequest::findOrFail($id);
+        $tireRequest->transport_approval_status = $request->status;
+        $tireRequest->save();
+
+        return redirect()->route('transport.viewtransport')->with('success', 'Transport approval updated!');
     }
 
 

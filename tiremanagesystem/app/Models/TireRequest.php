@@ -25,4 +25,9 @@ class TireRequest extends Model
     {
         return $this->hasOne(SectionApproval::class, 'request_id');
     }
+
+    public function mechanicalApprovalCheck()
+    {
+        return $this->hasOne(MechanicalApprovalCheck::class, 'request_id');
+    }
 }
