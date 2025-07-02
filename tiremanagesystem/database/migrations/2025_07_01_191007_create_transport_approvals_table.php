@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     
     public function up(): void {
-        Schema::create('section_approvals', function (Blueprint $table) {
-            $table->id();
+        Schema::create('transport_approvals', function (Blueprint $table) {
+             $table->id();
             $table->unsignedBigInteger('request_id');
             $table->unsignedBigInteger('user_id');
             $table->string('status');
-            $table->text('comments')->nullable();
-            $table->string('service_no');
+            $table->text('transport_comments')->nullable();
+            $table->string('transport_officer_number')->nullable();
             $table->timestamp('updated_at')->nullable();
 
             $table->foreign('request_id')->references('id')->on('tire_requests')->onDelete('cascade');
@@ -22,6 +22,6 @@ return new class extends Migration {
     }
 
     public function down(): void {
-        Schema::dropIfExists('section_approvals');
+        Schema::dropIfExists('transport_approvals');
     }
 };

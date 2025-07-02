@@ -4,13 +4,12 @@
 
   <!-- ✅ BLUR OVERLAY -->
   <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-[8px]"></div>
-
   <!-- Header Section -->
     @include('layouts.homeheader')
 
 
   <!-- Main Content -->
-  <main class="flex items-center justify-center min-h-[calc(100vh-160px)] px-4 text-center relative z-10 animate-fadeInSlow mb-20">
+  <main class="relative z-10 flex items-center justify-center min-h-[calc(100vh-160px)] px-4 text-center animate-fadeInSlow mb-20">
     <div class="w-full space-y-6 max-w-7xl">
       <h1 class="text-4xl font-extrabold md:text-6xl drop-shadow-lg">Tire Management System</h1>
       <p class="text-xl font-medium text-gray-300 md:text-2xl">Smart Management for SLT Mobile Vehicles</p>
@@ -21,14 +20,12 @@
 
         <!-- Master Data -->
         <div class="relative w-full">
-          <a onclick="toggleDropdown('masterDropdown')"
+          <a href="{{ route('tiredashboard') }}"
             class="w-full h-14 rounded-[10px] font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform text-base font-serif btn-gradient">
             <img src="https://img.icons8.com/ios/50/request-service.png" class="w-auto h-6" />
             Master Data
         </a>
-          <div id="masterDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
-            <a href="{{ route('masterdata.tire') }}" class="block px-4 py-2 hover:bg-gray-100">Tire Data</a>
-          </div>
+          
         </div>
 
         <!-- Tire Request -->
@@ -39,8 +36,8 @@
             Tire Request
           </button>
           <div id="requestDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
-            <a href="NewTireRequest.html" class="block px-4 py-2 hover:bg-gray-100">Tire Request</a>
-            <a href="approval.html" class="block px-4 py-2 hover:bg-gray-100">Approval</a>
+            <a href="{{ route('tirerequest.new') }}" class="block px-4 py-2 hover:bg-gray-100">Tire Request</a>
+            <a href="{{ route('tirerequest.approval') }}" class="block px-4 py-2 hover:bg-gray-100">Approval</a>
             <a href="approval.html" class="block px-4 py-2 hover:bg-gray-100">Tire Receipt</a>
             <a href="approval.html" class="block px-4 py-2 hover:bg-gray-100">User Inquiry</a>
           </div>
@@ -54,8 +51,8 @@
             Transport Section
           </button>
           <div id="transportDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
-            <a href="transportDashboard.html" class="block px-4 py-2 hover:bg-gray-100">Enter Evaluation</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Approval</a>
+            <a href="{{ route('transport.evaluation') }}" class="block px-4 py-2 hover:bg-gray-100">Enter Evaluation</a>
+            <a href="{{ route('transport.viewtransport') }}" class="block px-4 py-2 hover:bg-gray-100">Approval</a>
             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Credit Repair Order</a>
           </div>
         </div>

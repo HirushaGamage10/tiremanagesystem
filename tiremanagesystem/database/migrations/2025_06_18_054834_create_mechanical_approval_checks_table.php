@@ -9,17 +9,19 @@ return new class extends Migration {
         Schema::create('mechanical_approval_checks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('request_id');
-            $table->string('steering_system_status');
-            $table->string('suspension_status');
-            $table->string('alignment_status');
-            $table->string('balance_status');
-            $table->string('grease_point_status');
-            $table->text('comments')->nullable();
-            $table->string('mechanic_officer');
+            $table->unsignedBigInteger('user_id');
+            $table->string('warranty_state');
+            $table->string('incorrect_alignment');
+            $table->string('detective_steering_system');
+            $table->string('detective_suspension');
+            $table->string('purchase_tires');
+            $table->text('mechanic_comments')->nullable();
+            $table->string('mechanic_officer_services_number')->nullable();
             $table->string('approval_status');
             $table->timestamp('updated_at')->nullable();
 
             $table->foreign('request_id')->references('id')->on('tire_requests')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -27,3 +29,4 @@ return new class extends Migration {
         Schema::dropIfExists('mechanical_approval_checks');
     }
 };
+

@@ -5,12 +5,21 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+
     public function up(): void {
         Schema::create('tire_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('request_code')->unique();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('vehicle_id');
+            $table->foreignId('tire_id')->constrained('tires')->onDelete('cascade');
+            $table->string('user_section');
             $table->string('delivery_place_office');
             $table->string('delivery_place_town');
             $table->date('last_replacement_date');
@@ -24,10 +33,13 @@ return new class extends Migration {
             $table->integer('present_km_reading');
             $table->integer('previous_km_reading');
             $table->text('tire_wear_pattern')->nullable();
+            //comment 
+            $table->text('comment')->nullable();
             $table->text('images')->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->string('mechanic_approval_status')->nullable();
+            $table->timestamps();
+
             $table->string('section_approval_status')->nullable();
+            $table->string('mechanic_approval_status')->nullable();
             $table->string('transport_approval_status')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -38,4 +50,5 @@ return new class extends Migration {
     public function down(): void {
         Schema::dropIfExists('tire_requests');
     }
+
 };

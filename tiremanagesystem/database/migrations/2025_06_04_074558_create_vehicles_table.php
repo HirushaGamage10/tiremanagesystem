@@ -10,9 +10,12 @@ return new class extends Migration {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('vehicle_number');
-            $table->string('type');
-            $table->string('brand');
             $table->string('model');
+            $table->string('brand');      
+            $table->year('register_year')->nullable();
+            $table->string('engine_number')->nullable();
+            $table->string('chassis_number')->nullable();
+            $table->string('branch');
             $table->string('department')->nullable();
             $table->timestamps();
         });

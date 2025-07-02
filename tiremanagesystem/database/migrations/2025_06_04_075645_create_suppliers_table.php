@@ -10,7 +10,6 @@ return new class extends Migration {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('tire_id');
             $table->string('tire_size');
             $table->string('brand');
             $table->text('address')->nullable();
@@ -20,7 +19,7 @@ return new class extends Migration {
             $table->text('comment')->nullable();
             $table->timestamps();
 
-            $table->foreign('tire_id')->references('id')->on('tires')->onDelete('cascade');
+            
         });
     }
 

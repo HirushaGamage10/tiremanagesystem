@@ -1,15 +1,12 @@
-<!-- filepath: resources/views/login/userlogin.blade.php -->
+<!-- filepath: resources/views/login/mechaniclogin.blade.php -->
 <x-app-layout>
 
 <body class="relative flex items-center justify-center w-full h-full min-h-screen px-4 py-8 overflow-hidden bg-center bg-cover" style="background-image: url('{{ asset('assets/images/background1.png') }}');">
-
+    
   <!-- ✅ LOGO TOP-LEFT -->
-    <a href="{{ route('home') }}">
-        <div class="absolute z-10 flex flex-col items-start top-6 left-6">
-            <img src="{{ asset('assets/images/logo2.png') }}" class="h-[100px]" alt="Logo" />
-        </div>
-    </a>
-
+  <div class="absolute z-10 flex flex-col items-start top-6 left-6">
+    <img src="{{ asset('assets/images/logo2.png') }}" class="h-[100px]" alt="Logo" />
+  </div>
 
   <!-- ✅ BLUR OVERLAY -->
   <div class="absolute inset-0 z-0 backdrop-blur bg-black/30"></div>
@@ -23,8 +20,8 @@
             <div class="absolute inset-0 bg-black bg-opacity-10"></div>
         
             <!-- Centered content -->
-            <div class="relative z-10 max-w-md p-6  rounded-xl">
-                <h2 class="pt-4 mb-12 text-4xl font-bold text-center">User Login</h2>
+            <div class="relative z-10 max-w-md p-6 shadow-md rounded-xl">
+                <h2 class="pt-4 mb-12 text-4xl font-bold text-center">Mechanic Login</h2>
                 <h4 class="mb-6 text-xl font-semibold">Vehicle Tire Management System</h4>
                 <p class="text-sm leading-relaxed text-gray-200">
                     Efficient tire request, approval, and management for company vehicles.
@@ -36,7 +33,7 @@
 
         <!-- RIGHT PANEL -->
         <div class="flex flex-col justify-center p-10 bg-white bg-opacity-90">
-            <form class="space-y-6" method="POST" action="{{ route('user.login.submit') }}">
+            <form class="space-y-6" method="POST" action="{{ route('mechanic.login.submit') }}">
                 @csrf
 
                 @if($errors->any())
@@ -66,15 +63,16 @@
                 </div>
 
                 <button type="submit" class="w-full py-3 font-semibold text-white transition-all duration-300 bg-blue-700 rounded-lg hover:bg-blue-800">
-                    Login
+                  Login
                 </button>
 
-                <p class="mt-4 text-sm text-gray-500">Forgot Password? <a href="forgot_password.html" class="text-blue-700 hover:underline">Reset</a></p>
+                <p class="mt-4 text-sm text-gray-500">Forgot Password? <a href="#" class="text-blue-700 hover:underline">Reset</a></p>
+
             </form>
         </div>
     </div>
 
-     <!-- Custom JavaScript -->
+    
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
 </body>
