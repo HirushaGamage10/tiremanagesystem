@@ -22,7 +22,7 @@
         <div class="relative w-full">
           <a href="{{ route('tiredashboard') }}"
             class="w-full h-14 rounded-[10px] font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform text-base font-serif btn-gradient">
-            <img src="https://img.icons8.com/ios/50/request-service.png" class="w-auto h-6" />
+            <img src="https://img.icons8.com/?size=100&id=cUn1sl6y4Whd&format=png&color=000000" class="w-auto h-6" />
             Master Data
         </a>
           
@@ -32,7 +32,7 @@
         <div class="relative w-full">
           <button onclick="toggleDropdown('requestDropdown')"
             class="w-full h-14 rounded-[10px] font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform text-base font-serif btn-gradient">
-            <img src="https://img.icons8.com/ios/50/request-service.png" class="w-auto h-6" />
+            <img src="https://img.icons8.com/?size=100&id=25643&format=png&color=000000" class="w-auto h-6" />
             Tire Request
           </button>
           <div id="requestDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
@@ -47,7 +47,7 @@
         <div class="relative w-full">
           <button onclick="toggleDropdown('transportDropdown')"
             class="w-full h-14 rounded-[10px] font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform text-base font-serif btn-gradient">
-            <img src="https://img.icons8.com/color/48/car--v1.png" class="w-auto h-6" />
+            <img src="https://img.icons8.com/?size=100&id=15126&format=png&color=000000" class="w-auto h-6" />
             Transport Section
           </button>
           <div id="transportDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
@@ -61,7 +61,7 @@
         <div class="relative w-full">
           <button onclick="toggleDropdown('reportDropdown')"
             class="w-full h-14 rounded-[10px] font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform text-base font-serif btn-gradient">
-            <img src="assets/images/icon2.png" class="w-auto h-6" />
+            <img src="https://img.icons8.com/?size=100&id=12150&format=png&color=000000" class="w-auto h-6" />
             Report
           </button>
           <div id="reportDropdown" class="absolute z-10 hidden w-full mt-2 text-black bg-white shadow-lg dropdown-animation rounded-xl">
