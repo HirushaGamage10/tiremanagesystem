@@ -9,15 +9,28 @@ use App\Http\Controllers\OfficerAuthController;
 use App\Http\Controllers\MechanicAuthController;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\TransportAuthController;
+use App\Http\Controllers\ProfileController;
+
 
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+});
+
+
 Route::get('/login', function () {
     return redirect()->route('admin.login');
 })->name('login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 // Admin routes
 Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
