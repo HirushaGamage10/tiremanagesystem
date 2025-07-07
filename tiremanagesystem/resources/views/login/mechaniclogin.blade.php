@@ -4,9 +4,11 @@
 <body class="relative flex items-center justify-center w-full h-full min-h-screen px-4 py-8 overflow-hidden bg-center bg-cover" style="background-image: url('{{ asset('assets/images/background1.png') }}');">
     
   <!-- ✅ LOGO TOP-LEFT -->
-  <div class="absolute z-10 flex flex-col items-start top-6 left-6">
-    <img src="{{ asset('assets/images/logo2.png') }}" class="h-[100px]" alt="Logo" />
-  </div>
+   <a href="{{ route('home') }}">
+        <div class="absolute z-10 flex flex-col items-start top-6 left-6">
+            <img src="{{ asset('assets/images/logo2.png') }}" class="h-[100px]" alt="Logo" />
+        </div>
+    </a>
 
   <!-- ✅ BLUR OVERLAY -->
   <div class="absolute inset-0 z-0 backdrop-blur bg-black/30"></div>
