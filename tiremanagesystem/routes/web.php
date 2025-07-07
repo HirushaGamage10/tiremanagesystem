@@ -10,6 +10,7 @@ use App\Http\Controllers\MechanicAuthController;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\TransportAuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TireOrderController;
 
 
 
@@ -100,6 +101,10 @@ Route::middleware(['transport_officer'])->group(function () {
     Route::get('/transport/approval/{id}', [TransportController::class, 'transportApprovalView'])->name('transport.transportapprovalview');
     Route::post('/transport/approval/{id}', [TransportController::class, 'transportApprovalSubmit'])->name('transport.transportapprovalsubmit');
     Route::get('/transport/after-approval', [TransportController::class, 'afterApproval'])->name('transport.afterapproval');
+    Route::get('/orders', [TireOrderController::class, 'index'])->name('order.list');
+    Route::get('/orders/create/{request_id}', [TireOrderController::class, 'create'])->name('order.create');
+    Route::post('/orders/store/{request_id}', [TireOrderController::class, 'store'])->name('order.store');
+    Route::post('/orders/arrived/{order_id}', [TireOrderController::class, 'markArrived'])->name('order.arrived');
 });
 
 

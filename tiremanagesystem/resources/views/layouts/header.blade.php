@@ -9,12 +9,21 @@
     <div class="relative">
       <div onclick="toggleDropdown('profileMenu')" class="flex items-center space-x-3 cursor-pointer">
         <span class="font-medium text-white">{{ Auth::user()->full_name ?? Auth::user()->name }}</span>
-        <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 border-2 border-white rounded-full" alt="Profile Picture">
+        <img
+          src="{{ Auth::user()->image && \Illuminate\Support\Facades\Storage::disk('public')->exists(Auth::user()->image) ? asset('storage/' . Auth::user()->image) : 'https://randomuser.me/api/portraits/men/75.jpg' }}"
+          alt="Profile"
+          class="w-10 h-10 rounded-full border-2 border-white shadow-lg object-cover"
+        />
+
       </div>
       <div id="profileMenu" class="absolute right-0 z-20 hidden w-56 mt-2 text-black shadow-lg rounded-xl border-2 border-blue-600">
         <!-- Banner Section -->
         <div class="flex items-center gap-3 px-4 py-3 rounded-t-xl bg-gradient-to-r from-blue-700 to-blue-400 text-white">
-          <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 border-2 border-white rounded-full" alt="Profile Picture">
+          <img
+            src="{{ Auth::user()->image && \Illuminate\Support\Facades\Storage::disk('public')->exists(Auth::user()->image) ? asset('storage/' . Auth::user()->image) : 'https://randomuser.me/api/portraits/men/75.jpg' }}"
+            alt="Profile"
+            class="w-10 h-10 rounded-full border-2 border-white shadow-lg object-cover"
+          />
           <div>
             <div class="font-semibold">{{ Auth::user()->full_name ?? Auth::user()->name }}</div>
             <div class="text-xs opacity-80">{{ Auth::user()->email }}</div>

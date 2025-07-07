@@ -1,6 +1,5 @@
-<!-- filepath: resources/views/Transport/transportpreapproval.blade.php -->
+<!-- filepath: /Users/inazawaelectronics/Documents/SLT/Tire Management System/TireManagement/tiremanagesystem/tiremanagesystem/resources/views/Transport/afterapproval.blade.php -->
 <x-app-layout>
-
 <body class="bg-gray-100 h-screen flex flex-col overflow-hidden">
 
     <!-- Header -->
@@ -10,7 +9,7 @@
     <div class="flex flex-1 overflow-hidden flex-col sm:flex-row">
 
         <!-- Sidebar -->
-        @include('layouts.side3')
+        @include('layouts.side5')
 
         <!-- Main Scrollable Content -->
         <div class="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#999999]">
@@ -55,12 +54,18 @@
                             </tr>
                         </thead>
                         <tbody id="tableBody">
+                          @php $hasRows = false; @endphp
                           @forelse($requests as $req)
+                            @php
+                              $ordered = \App\Models\TireOrder::where('tire_request_id', $req->id)->exists();
+                            @endphp
                             @if(
                               $req->section_approval_status === 'approved' &&
                               $req->mechanic_approval_status === 'approved' &&
-                              $req->transport_approval_status === 'approved'
+                              $req->transport_approval_status === 'approved' &&
+                              !$ordered
                             )
+                              @php $hasRows = true; @endphp
                               <tr class="text-gray-700">
                                 <td class="px-4 py-2 border">{{ $req->request_code ?? '-' }}</td>
                                 <td class="px-4 py-2 border">{{ $req->vehicle->vehicle_number ?? '-' }}</td>
@@ -73,24 +78,23 @@
                                 </td>
                                 <td class="px-4 py-2 border">{{ $req->created_at ? $req->created_at->format('Y-m-d') : '-' }}</td>
                                 <td class="px-4 py-2 border">
-                                  <a href="" class="bg-blue-700 text-white px-2 py-1 rounded text-sm inline-block">Order</a>
+                                  <a href="{{ route('order.create', $req->id) }}" class="bg-blue-700 text-white px-2 py-1 rounded text-sm inline-block">Order</a>
                                 </td>
                               </tr>
                             @endif
                           @empty
-                            <tr>
-                              <td colspan="8" class="text-center py-4">No fully approved tire requests found.</td>
-                            </tr>
                           @endforelse
+                          @if(!$hasRows)
+                            <tr>
+                              <td colspan="9" class="text-center py-4 text-gray-600 font-semibold">No fully approved tire requests found.</td>
+                            </tr>
+                          @endif
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
-    
     <script src="{{ asset('assets/js/script.js') }}"></script>
-
 </body>
 </x-app-layout>

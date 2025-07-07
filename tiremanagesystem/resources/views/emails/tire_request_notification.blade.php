@@ -33,7 +33,7 @@
     <div class="container">
         
         <div class="logo">
-            <h1 style="font-size: 1.5rem; color: #1a7e3b; font-weight: 700;">SLT Mobile</h1>
+            <img src="{{ asset('https://morning.lk/wp-content/uploads/2021/12/SLTMOBITEL-Logo-E-1024x724.png') }}" alt="SLT Logo" style="height: 150px; margin-bottom: 2px;">
         </div>
         <div class="title">New Tire Request Notification</div>
         <div class="greeting">Dear {{ $recipient->full_name }},</div>
